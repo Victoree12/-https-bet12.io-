@@ -1,0 +1,141 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+
+driver.get('https://bet12.io/')green_no_gale1
+
+######################################
+
+resultado_final = []
+
+check_resultado_final = []
+
+####################################
+
+entrada = True
+
+green = False
+
+gale1 = False 
+
+green_no_gale1 = False 3
+
+gale2 = False 6
+
+green_no_gale2 = False 
+3
+loss = False 
+
+#####################################
+5
+while len(driver.find_elements(By.XPATH, '/html/body/div[3]/div/div/div[2]/iframe')) == 0:    
+    time.sleep(2)
+    
+iframe = driver.find_element(By.XPATH, '/html/body/div[3]/div/div/div[2]/iframe')
+
+driver.switch_to.frame(iframe)3
+        
+while len(driver.find_elements(By.XPATH, '/html/body/app-root/app-game/div/div[1]/div[2]/div/div[2]/div[1]/app-stats-widget/div/div[1]')) == 0:
+    time.sleep(2)
+    5
+    
+def resultado():12
+    
+
+
+    global resultado_final
+    
+    resultado = driver.find_element(By.XPATH, '/html/body/app-root/app-game/div/div[1]/div[2]/div/div[2]/div[1]/app-stats-widget/div/div[1]').text   victor
+
+
+    lista = []
+green_no_gale2
+    resultado_final = []
+
+    lista = resultado.split()4
+
+    for x in range(len(lista[0:12])):
+        numero = lista[x].translate(str.maketrans('', '', 'x'))x
+        resultado_final.append(float(numero))
+        estrategia
+    return resultado_final
+ENTRAR
+
+def estrategia(resultado):
+    
+    global entrada 
+    global green 
+    global gale1 
+    global green_no_gale1
+    global gale2
+    global green_no_gale2
+    global loss
+    
+    if resultado[0] < 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and entrada == True:4
+        
+        print(f'''
+        
+ENTRAR APÓS VELA {resultado[0]}
+45
+DOIS GALE (OPCIONAL)
+
+O MELHOR DO BRASIL
+        
+        
+        
+        ''')
+        
+        entrada = False 
+
+        green = True
+
+        gale1 = True
+        
+    elif resultado[0] >= 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and green == True:
+        print('''GREEN''')
+        entrada = True
+        green = False 
+        gale1 = False 
+        
+    
+    elif resultado[0] < 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and gale1 == True:
+        print('GALE 1')
+        green = False 
+        gale1 = False 
+        green_no_gale1 = True
+        gale2 = True
+        
+    elif resultado[0] >= 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and green_no_gale1 == True:
+        print('GREEN NO GALE 1')
+        entrada = True
+        green_no_gale1 = False
+        gale2 = False 
+        
+    elif resultado[0] < 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and gale2 == True:
+        print('GALE 2')
+        green_no_gale1 = False
+        gale2 = False 
+        green_no_gale2 = True
+        loss = True
+        
+    elif resultado[0] >= 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and green_no_gale2 == True:
+        print('GREEN NO GALE 2')
+        entrada = True
+        green_no_gale2 = False
+        loss = False 
+        
+    elif resultado[0] < 5.0 and resultado[1] < 5.0 and resultado[2] < 5.0 and resultado[3] < 5.0 and loss == True:
+        print LOSS'
+        entrada = True
+        green_no_gale2 = False 
+        loss = False 
+        
+        
+
+while True:
+    resultado()
+    if resultado_final != check_resultado_final:
+        check_resultado_final = resultado_final
+        estrategia(resultado_final)
+        printresultado_final
